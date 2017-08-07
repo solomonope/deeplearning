@@ -25,13 +25,13 @@ y_test = keras.utils.to_categorical(y_test, num_classes=n_classes);
 
 model = Sequential();
 
-model.add(Dense((64), activation='sigmoid', input_shape=(784,)));
+model.add(Dense((64), activation='relu', input_shape=(784,)));
 model.add(Dense((10), activation="softmax"));
 
 model.summary();
 
-model.compile(loss="mean_squared_error", optimizer=SGD(lr=0.001), metrics=['accuracy'])
+model.compile(loss="categorical_crossentropy", optimizer=SGD(lr=0.001), metrics=['accuracy'])
 
-model.fit(X_train, y_train, batch_size=128, epochs=20, verbose=1, validation_data=(X_test, y_test))
+model.fit(X_train, y_train, batch_size=128, epochs=200, verbose=1, validation_data=(X_test, y_test))
 
 #print(model)
