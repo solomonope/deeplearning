@@ -23,4 +23,5 @@ output = session.run(a, feed_dict={x: np.random.random((1, n_input))})
 
 
 session.close();
+print(output.shape)
 print(output)
