@@ -12,13 +12,13 @@ class Perceptron:
 
 class Sigmoid(Perceptron):
     def predict(self, input):
-        x = -super(Sigmoid, self).predict(input)
+        x = super(Sigmoid, self).predict(input)
         return 1 / (1 + np.exp(-x));
 
 
 if __name__ == "__main__":
     perceptron = Perceptron([2, 2], -4);
-    sigmoid = Sigmoid([2*20000, 2*20000], -4*20000);
+    sigmoid = Sigmoid([2*30000, 2*30000], -4*30000);
     print(perceptron.predict([5, 6]))
     print(sigmoid.predict([5, 6]))
 
